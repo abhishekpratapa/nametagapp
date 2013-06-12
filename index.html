@@ -1,0 +1,171 @@
+<html ng-app>
+  <head>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+		<title></title>
+		<script>
+			$(document).ready(function(){
+				$("#clicked").click(function(){
+					$("#content1").css("display","none");
+					$("#content2").css("display","block");
+				});
+				$("#edit").click(function(){
+					$("#content2").css("display","none");
+					$("#content1").css("display","block");
+				});
+			});
+		</script>
+		<style>
+			body{
+				margin:0;
+				border:0;
+				background: #444444;
+				font-family: 'Roboto', sans-serif;
+			}
+			#cont1{
+				margin:auto;
+				border:0;
+				width:80%;
+				height:70%;
+				background: #DDDDDD;
+			}
+			#spacer{
+				margin:auto;
+				width:80%;
+				height:90px;
+			}
+			#name{
+				position:absolute;
+				top:30px;
+				font-size: 30px;
+				color:white;
+				right:50px;
+			}
+			#education{
+				margin: 0;
+				padding:10px;
+				text-align:left;
+				font-size: 20px;
+			}
+			#spacer2{
+				margin:auto;
+				width:80%;
+				height:50px;
+			}
+			#skills{
+				margin: 0;
+				padding:10px;
+				text-align:left;
+				font-size: 20px;
+			}
+			#edit{
+				position:absolute;
+				top:5px;
+				right:5px;
+				width:20px;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				background: #9999DD;
+				height:20px;
+			}
+			#content1{
+				margin:0;
+				width: 100%;
+				height: 100%;
+			}
+			#content2{
+				display:none;
+				margin:0;
+				width: 100%;
+				height: 100%;
+			}
+			.text{
+				margin:auto;
+				width: 100%;
+				font-size: 25px;
+				padding: 5px;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border:1px;
+				border-radius: 10px;
+			}
+			#clicked{
+				margin:0;
+				padding: 9px;
+				width:50px;
+				text-align:center;
+				color:white;
+				background:#DDDDDD;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				cursor:pointer;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content1">
+			<table style="margin:auto; width:80%;">
+				<tbody>
+					<th style="font-size:40px;color:white;">
+						Settings
+					</th>
+					<tr style="width:100%; height:20px;">
+					</tr>
+					<tr>
+						<td>
+							<input class="text" type="text" ng-model="yourName" placeholder="Enter a name here"/>
+						</td>
+					</tr>
+					<tr style="width:100%; height:20px;">
+					</tr>
+					<tr>
+						<td>
+							<input class="text" type="text" ng-model="yourEdu" placeholder="Where were you Educated?"/>
+						</td>
+					</tr>
+					<tr style="width:100%; height:20px;">
+					</tr>
+					<tr>
+						<td>
+							<input class="text" type="text" ng-model="yourExp" placeholder="What do you know?"/>
+						</td>
+					</tr>
+					<tr style="width:100%; height:20px;">
+					</tr>
+					<tr>
+						<td>
+							<div id="clicked">
+								Done
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="content2">
+			<div id="spacer">
+			</div>
+			<div id="name">
+				{{yourName}}
+			</div>
+			<div id="cont1">
+				<div id="spacer2">
+				</div>
+				<div id="education">
+					<b>Education:</b> {{yourEdu}}
+				</div>
+				<div id="skills">
+					<b>Skills:</b> {{yourExp}}
+				</div>
+				<div id="edit">
+					<img width="20px" height="20px" src="ico.png"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
